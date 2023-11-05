@@ -37,7 +37,7 @@ def handle_image(message):
         formData = {'file': ('image.jpg', image_file)}
         telegraph_response = requests.post('https://telegra.ph/upload', files=formData)
         photo_url = telegraph_response.json()[0]['src']
-        bot.send_message(message.chat.id, f'🔗 Image URL: https://telegra.ph{photo_url}\n🔗 Graph Image URL: https://graph.graph.org{photo_url}\n')
+        bot.send_message(message.chat.id, f'🔗 Image URL: https://telegra.ph{photo_url}\n🔗 Graph Image URL: https://graph.org{photo_url}\n')
     except Exception as e:
         bot.send_message(message.chat.id, f'❌ Error: {e}')
 
